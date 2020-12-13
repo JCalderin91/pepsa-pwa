@@ -2,7 +2,7 @@
   <div class="scanner container">
     <h3>Escanea el código QR</h3>
     <br />
-    <div class="scaner-box">
+    <div class="scaner-box" :class="{ loading }">
       <div class="border-top-left"></div>
       <div class="border-top-right"></div>
       <div class="border-bottom-left"></div>
@@ -11,9 +11,7 @@
         :track="dots"
         @decode="onDecode"
         @init="onInit"
-      >
-        <span v-if="loading">Cargando</span>
-      </qrcode-stream>
+      ></qrcode-stream>
     </div>
   </div>
 </template>
@@ -53,8 +51,9 @@ export default {
 
     onDecode(result) {
       this.result = result;
-      this.$router.push({name:'dashboard'})
-    },  
+      alert(result)
+      this.$router.push({ name: "dashboard" });
+    },
     async onInit(promise) {
       this.loading = true;
       try {
@@ -137,15 +136,41 @@ export default {
     width: calc(100% + 1.5rem);
     box-shadow: 0 0 10px 5px #03c85f77, 0 0 25px 10px #03c85f38,
       0 0 35px 15px #03c85f09;
-    animation: scan 1.8s infinite alternate ease-in-out;
     z-index: 10;
   }
+  &:not(.loading)::before {
+    animation: scan 1.8s infinite alternate ease-in-out;
+  }
+  &.loading::after {
+    content: "";
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: var(--secondary);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: 10;
+    animation: spin 1s infinite;
+  }
+
   @keyframes scan {
     0% {
       top: 0rem;
     }
     100% {
       top: 100%;
+    }
+  }
+  @keyframes spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    40% {
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(135deg);
     }
   }
 }

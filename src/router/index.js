@@ -14,11 +14,17 @@ const routes = [{
         path: '/inicio',
         name: 'dashboard',
         component: () => import('@/views/dashboard/Index.vue'),
+        meta: {
+          title: "Pepsa",
+        }
       },      
       {
         path: '/scanner',
         name: 'scanner',
         component: () => import('@/views/scanner/Index.vue'),
+        meta: {
+          title: "Escaneo de código qr",
+        }
       },      
     ]
   },
