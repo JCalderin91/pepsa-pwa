@@ -63,7 +63,7 @@ export default {
       background-color: white !important;
       margin: 0;
       padding: 1rem;
-      border: none;
+      border: 2px solid rgb(161, 161, 161);
       &:focus {
         border-color: #696969;
       }

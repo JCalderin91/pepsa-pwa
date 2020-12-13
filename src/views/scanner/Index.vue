@@ -138,6 +138,7 @@ export default {
     box-shadow: 0 0 10px 5px #03c85f77, 0 0 25px 10px #03c85f38,
       0 0 35px 15px #03c85f09;
     animation: scan 1.8s infinite alternate ease-in-out;
+    z-index: 10;
   }
   @keyframes scan {
     0% {
