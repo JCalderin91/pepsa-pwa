@@ -28,7 +28,7 @@ export default {
 #main {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 80px 1fr 45px 15px;
+  grid-template-rows: 80px calc(100vh - 140px) 45px 15px;
   .body{
     background-color: var(--primary);
     color: white;

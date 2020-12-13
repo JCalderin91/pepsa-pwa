@@ -19,6 +19,14 @@ const routes = [{
         }
       },      
       {
+        path: '/herramientas',
+        name: 'tools',
+        component: () => import('@/views/tools/Index.vue'),
+        meta: {
+          title: "Lista de herramientas",
+        }
+      },      
+      {
         path: '/scanner',
         name: 'scanner',
         component: () => import('@/views/scanner/Index.vue'),

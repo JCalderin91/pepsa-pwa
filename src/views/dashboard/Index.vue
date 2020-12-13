@@ -4,14 +4,14 @@
         <p>Bienvenido a la plataforma de préstamos</p>
         <c-input-text placeholder="Buscar"/>
         <div class="menu-group">
-            <div class="menu-item">
+            <router-link :to="{name:'tools'}" class="menu-item">
                 <img src="@/assets/images/listar-herramientas.svg" alt="" class="image">
                 <h4 class="title">Listar herramientas</h4>
-            </div>
-            <div class="menu-item">
+            </router-link >
+            <router-link :to="{name:'scanner'}" class="menu-item">
                 <img src="@/assets/images/listar-pedidos.svg" alt="" class="image">
                 <h4 class="title">Listar herramientas</h4>
-            </div>
+            </router-link >
             <router-link :to="{name:'scanner'}" class="menu-item">
                 <img src="@/assets/images/escaner-codigo.svg" alt="" class="image">
                 <h4 class="title">Listar herramientas</h4>
@@ -55,6 +55,7 @@ p{
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
+        text-decoration: none;
         .image{
             height: 75px;
         }
