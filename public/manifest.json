@@ -1,0 +1,10 @@
+{
+    "name": "Pepsa",
+    "short_name": "Pepsa",
+    "theme_color": "#076633",
+    "background_color": "#c99e67",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/"
+  }
