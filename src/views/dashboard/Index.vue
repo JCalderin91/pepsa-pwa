@@ -43,6 +43,8 @@ p{
     display: grid;
     grid-template: 180px 180px / 1fr 1fr;
     gap: .5rem;
+    height: calc(100vh - 275px);
+    overflow: scroll;
     .menu-item{
         background-image: url('~@/assets/images/mascara.svg');
         background-position: 100% 0;
